@@ -1,0 +1,47 @@
+body {
+    font-size: 1.15em;
+    margin: 0;
+}
+
+#header, #intro {
+    text-align: center;
+}
+
+/* Navigation styling */
+nav {
+    background-color: rgb(241, 241, 241);
+}
+
+nav > ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav > ul > li {
+    display: inline-block;
+    text-align: left;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1.5em;
+    height: 50px;
+}
+
+/* Link styling */
+.nav-link {
+    line-height: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
