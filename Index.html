@@ -2,78 +2,80 @@
 <html>
     <head>
         <link rel="stylesheet" href="./index.css" />
-        <script src="./index.js"></script>
+
+        <!-- Wait for the DOM tree to be fully built since we are using an IIFE -->
+        <script defer src="./index.js"></script>
     </head>
     <body>
+        <div id="background"></div>
         <nav>
             <ul class="flex-container">                
                 <li>
-                    <a href="" class="nav-link">Intro</a>
+                    <a href="#intro" class="nav-link">Intro</a>
                 </li>
                 <li>
-                    <a href="" class="nav-link">Experience</a>
+                    <a href="#experience" class="nav-link">Experience</a>
                 </li>
                 <li>
-                    <a href="" class="nav-link">Projects</a>
+                    <a href="#projects" class="nav-link">Projects</a>
                 </li>
             </ul>
         </nav>
-        <header id="header">
-            <h1>Michael's home page</h1>
-        </header>
-        <article id="intro">
-            <p>My name is Michael Wilson and I'm currently a Software Engineer at Microsoft. I love to code, play video games, and workout.</p>
+        <article class="center-content" id="intro">
+            <header>
+                My name is Michael Wilson and I'm currently a Software Engineer at Microsoft. I love to code, play video games, and workout.
+            </header>
         </article>
         <article id="experience">
             <h2>Experience</h2>
             <hr />
             <section>
-                <h3>Microsoft - Software Engineer</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> July 2021 - Present</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>Microsoft, Software Engineer</div>
+                    <div>July 2021 - Present</div>
+                </header>
             </section>
             <hr />
             <section>
-                <h3>Amazon - Frontend Engineer</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> February 2020 - July 2021</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>Amazon, Frontend Engineer</div>
+                    <div>February 2021 - July 2021</div>
+                </header>
             </section>
             <hr />
             <section>
-                <h3>Microsoft via TekSystems - Developer</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> July 2019 - February 2020</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>Microsoft, Contract Developer</div>
+                    <div>July 2019 - February 2020</div>
+                </header>
             </section>
             <hr />
             <section>
-                <h3>T-Mobile - Software Engineer</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> August 2018 - July 2019</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>T-Mobile, Software Engineer</div>
+                    <div>August 2018 - July 2019</div>
+                </header>
             </section>
             <hr />
             <section>
-                <h3>T-Mobile - Software Engineer intern</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> October 2017 - August 2018</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>T-Mobile, Software Engineer Intern</div>
+                    <div>Octoboer 2017 - August 2018</div>
+                </header>
             </section>
             <hr />
             <section>
-                <h3>EagleView Technologies - Software Engineer Intern</h3>
-                <ul>
-                    <li><strong>Tenure:</strong> January 2018 - June 2018</li>
-                </ul>
+                <header class="inline-flex section-header">
+                    <div>EagleView Technologies, Software Engineer Intern</div>
+                    <div>January 2018 - June 2018</div>
+                </header>
             </section>
         </article>
         <article id="projects">
             <h2>Projects</h2>
             <hr />
         </article>
-        <footer>
+        <footer class="inline-flex">
             <p>Developer: Michael Wilson</p>
             <p>Phone: 425-496-9030</p>
             <p>Email: secretmtgdev@gmail.com</p>

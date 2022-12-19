@@ -1,0 +1,141 @@
+// Browsers don't recognize SASS so an extension is required
+html {
+    scroll-behavior: smooth;
+    color: white;
+}
+
+body {
+    position: relative;
+    font-size: 1.15em;
+    margin: 0;
+}
+
+body > *:not(#background) {
+    position: relative;
+}
+
+/** START Snowflake animation, guide followed [Alvaro Montoro]: https://www.youtube.com/watch?v=XO02P3QwENo **/
+#background {
+    background: linear-gradient(#123, #111);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.snowflake {
+    height: var(--size);
+    width: var(--size);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px; // fall from the top of the page
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translate3d(var(--left-start), 0, 0) // place the snowflakes in a 3d space
+    }
+    100% {
+        transform: translate3d(var(--left-end), 110vh, 0) // place the snowflakes off of the page
+    }
+}
+
+@for $i from 1 through 100 {
+    .snowflake:nth-child(#{$i}) { // #{} represents interpolation in SASS
+        // Global variables
+        --size: #{random(100) * 0.15}px;
+        --left-start: #{random(25) - 15}em;
+        --left-end: #{random(25) - 15}em;
+
+        left: #{random(100)}vw;
+
+        // snowflakes fall endlessly at different speeds
+        animation: snowfall #{5 + random(10)}s linear infinite;
+
+        // snowflakes fall at different times
+        animation-delay: -#{random(10)}s;
+    }
+}
+
+/** END Snowflake animation **/
+
+header {
+    font-size: 2em;
+    overflow-wrap: break-word;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#intro header {
+    height: 100%;
+    width: 100%;
+}
+
+/** Each article should cover a whole page on initial load */
+article {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 50px; /* Takes into account the height of navbar */
+}
+
+.inline-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-header {
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 0.5em;
+}
+
+.center-content {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Navigation styling */
+nav {
+    background-color: rgb(241, 241, 241);
+    top: 0;
+    position: sticky;
+}
+
+nav > ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav > ul > li {
+    display: inline-block;
+    text-align: left;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1.5em;
+    height: 50px;
+}
+
+/* Link styling */
+.nav-link {
+    line-height: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
